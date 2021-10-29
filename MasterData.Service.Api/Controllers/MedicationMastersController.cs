@@ -20,12 +20,12 @@ namespace MasterData.Service.Api.Controllers
         }
 
         [HttpGet("GetAll")]
-        public ActionResult<List<MedicationMasters>> GetAll() =>
+        public ActionResult<List<MedicationMasters>> GetAllMedication() =>
             _medicationMasterService.GetAllMedication();
 
 
         [HttpGet(Name = "GetMedicationById")]
-        public ActionResult<MedicationMasters> Get(string id)
+        public ActionResult<MedicationMasters> GetMedicationbyId(string id)
         {
             var medication = _medicationMasterService.GetMedicationById(id);
 
@@ -37,21 +37,21 @@ namespace MasterData.Service.Api.Controllers
             return medication;
         }
 
-        [HttpGet(Name = "GetMedicationByName")]
-        public ActionResult<MedicationMasters> GetName(string id)
-        {
-            var medication = _medicationMasterService.GetMedicationByName(id);
+        //[HttpGet(Name = "GetMedicationByName")]
+        //public ActionResult<MedicationMasters> GetMedicationbyName(string id)
+        //{
+        //    var medication = _medicationMasterService.GetMedicationByName(id);
 
-            if (medication == null)
-            {
-                return NotFound();
-            }
+        //    if (medication == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return medication;
-        }
+        //    return medication;
+        //}
 
         [HttpGet("GetMedicationByDescription")]
-        public ActionResult<MedicationMasters> GetDescription(string desc)
+        public ActionResult<MedicationMasters> GetMedicationbyDescription(string desc)
         {
             try
             {
@@ -71,13 +71,13 @@ namespace MasterData.Service.Api.Controllers
         }
 
         [HttpPost("CreateNewMedication")]
-        public ActionResult<MedicationMasters> Create(MedicationMasters id)
+        public ActionResult<MedicationMasters> CreateMedication(MedicationMasters id)
         {
             _medicationMasterService.CreateMedication(id);
             return CreatedAtRoute("GetMedicationById", new { id = id.Id.ToString() }, id);
         }
         [HttpPut("UpdateMedication")]
-        public IActionResult Update(string id, MedicationMasters medicationMastersIn)
+        public IActionResult UpdateMedication(string id, MedicationMasters medicationMastersIn)
         {
             var medication = _medicationMasterService.GetMedicationById(id);
 

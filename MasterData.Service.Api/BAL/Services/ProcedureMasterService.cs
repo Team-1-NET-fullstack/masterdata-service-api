@@ -36,7 +36,7 @@ namespace MasterData.Service.Api.BAL.Services
             _procedureMasters.InsertOne(id);
             return id;
         }
-        public void Update(string id, ProcedureMasters procedureMasters) =>
+        public void UpdateProcedure(string id, ProcedureMasters procedureMasters) =>
             _procedureMasters.ReplaceOne(procedure => procedure.Id == id, procedureMasters);
     }
 }

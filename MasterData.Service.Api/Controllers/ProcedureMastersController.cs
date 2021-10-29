@@ -20,12 +20,12 @@ namespace MasterData.Service.Api.Controllers
         }
 
         [HttpGet("GetAll")]
-        public ActionResult<List<ProcedureMasters>> GetAll() =>
+        public ActionResult<List<ProcedureMasters>> GetAllProcedure() =>
             _procedureMasterService.GetAllProcedure();
 
 
         [HttpGet(Name = "GetProcedureById")]
-        public ActionResult<ProcedureMasters> Get(string id)
+        public ActionResult<ProcedureMasters> GetProcedurebyId(string id)
         {
             var procedure = _procedureMasterService.GetProcedureById(id);
 
@@ -37,21 +37,9 @@ namespace MasterData.Service.Api.Controllers
             return procedure;
         }
 
-        [HttpGet(Name = "GetProcedureByName")]
-        public ActionResult<ProcedureMasters> GetName(string id)
-        {
-            var procedure = _procedureMasterService.GetProcedureByName(id);
-
-            if (procedure == null)
-            {
-                return NotFound();
-            }
-
-            return procedure;
-        }
 
         [HttpGet("GetProcedureByDescription")]
-        public ActionResult<ProcedureMasters> GetDescription(string desc)
+        public ActionResult<ProcedureMasters> GetProcedurebyDescription(string desc)
         {
             try
             {
@@ -71,13 +59,13 @@ namespace MasterData.Service.Api.Controllers
         }
 
         [HttpPost("CreateNewProcedure")]
-        public ActionResult<ProcedureMasters> Create(ProcedureMasters id)
+        public ActionResult<ProcedureMasters> CreateProcedure(ProcedureMasters id)
         {
             _procedureMasterService.CreateProcedure(id);
             return CreatedAtRoute("GetProcedureById", new { id = id.Id.ToString() }, id);
         }
         [HttpPut("UpdateProcedure")]
-        public IActionResult Update(string id, ProcedureMasters procedureMastersIn)
+        public IActionResult UpdateProcedure(string id, ProcedureMasters procedureMastersIn)
         {
             var procedure = _procedureMasterService.GetProcedureById(id);
 
@@ -86,7 +74,7 @@ namespace MasterData.Service.Api.Controllers
                 return NotFound();
             }
 
-            _procedureMasterService.Update(id, procedureMastersIn);
+            _procedureMasterService.UpdateProcedure(id, procedureMastersIn);
 
             return NoContent();
         }

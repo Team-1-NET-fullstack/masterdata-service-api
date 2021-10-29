@@ -1,0 +1,102 @@
+[
+{
+"ProcedureMastersId":"1",
+"Name":"blood analysis",
+"Description":"blood analysis",
+"IsDeprecated":"0",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"ProcedureMastersId":"2",
+"Name":"gastric fluid analysis",
+"Description":"gastric fluid analysis",
+"IsDeprecated":"0",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"",
+"UpdatedBy":"",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"ProcedureMastersId":"3",
+"Name":"liver function test",
+"Description":"liver function test",
+"IsDeprecated":"1",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"ProcedureMastersId":"4",
+"Name":"malabsorption test",
+"Description":"malabsorption test",
+"IsDeprecated":"0",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"ProcedureMastersId":"5",
+"Name":"thyroid function test",
+"Description":"thyroid function test",
+"IsDeprecated":"1",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"ProcedureMastersId":"6",
+"Name":"ultrasound",
+"Description":"ultrasound",
+"IsDeprecated":"1",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"ProcedureMastersId":"7",
+"Name":"tomography",
+"Description":"tomography",
+"IsDeprecated":"0",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"ProcedureMastersId":"8",
+"Name":"autopsy",
+"Description":"autopsy",
+"IsDeprecated":"0",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"ProcedureMastersId":"9",
+"Name":"endoscopy",
+"Description":"endoscopy",
+"IsDeprecated":"1",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"ProcedureMastersId":"10",
+"Name":"phenolsulfonphthalein test",
+"Description":"phenolsulfonphthalein test",
+"IsDeprecated":"0",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+}
+]

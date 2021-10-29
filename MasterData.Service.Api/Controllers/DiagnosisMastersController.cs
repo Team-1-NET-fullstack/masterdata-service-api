@@ -20,12 +20,12 @@ namespace MasterData.Service.Api.Controllers
         }
 
         [HttpGet("GetAll")]
-        public ActionResult<List<DiagnosisMasters>> GetAll() =>
+        public ActionResult<List<DiagnosisMasters>> GetAllDiagnosis() =>
             _diagnosisMasterService.GetAllDiagnosis();
 
 
         [HttpGet(Name = "GetDiagnosisById")]
-        public ActionResult<DiagnosisMasters> Get(string id)
+        public ActionResult<DiagnosisMasters> GetDiagnosisbyId(string id)
         {
             var diagnosis = _diagnosisMasterService.GetDiagnosisById(id);
 
@@ -37,21 +37,21 @@ namespace MasterData.Service.Api.Controllers
             return diagnosis;
         }
 
-        [HttpGet(Name = "GetDiagnosisByName")]
-        public ActionResult<DiagnosisMasters> GetName(string id)
-        {
-            var diagnosis = _diagnosisMasterService.GetDiagnosisByName(id);
+        //[HttpGet(Name = "GetDiagnosisByName")]
+        //public ActionResult<DiagnosisMasters> GetName(string name)
+        //{
+        //    var diagnosis = _diagnosisMasterService.GetDiagnosisByName(name);
 
-            if (diagnosis == null)
-            {
-                return NotFound();
-            }
+        //    if (diagnosis == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return diagnosis;
-        }
+        //    return diagnosis;
+        //}
 
         [HttpGet("GetDiagnosisByDescription")]
-        public ActionResult<DiagnosisMasters> GetDescription(string desc)
+        public ActionResult<DiagnosisMasters> GetDesc(string desc)
         {
             try
             {
@@ -77,7 +77,7 @@ namespace MasterData.Service.Api.Controllers
             return CreatedAtRoute("GetDiagnosisById", new { id = id.Id.ToString() }, id);
         }
         [HttpPut("{id:length(24)}", Name = ("UpdateDiagnosis"))]
-        public IActionResult Update(string id, DiagnosisMasters diagnosisMastersIn)
+        public IActionResult UpdateDiagnosis(string id, DiagnosisMasters diagnosisMastersIn)
         {
             var diagnosis = _diagnosisMasterService.GetDiagnosisById(id);
 

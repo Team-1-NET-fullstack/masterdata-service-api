@@ -22,7 +22,7 @@ namespace MasterData.Service.Api.Controllers
         }
 
         [HttpGet("GetAllAllergy")]
-        public ActionResult<List<AllergyMasters>> GetAll()
+        public ActionResult<List<AllergyMasters>> GetAllAllergy()
         {
             try
             {
@@ -35,7 +35,7 @@ namespace MasterData.Service.Api.Controllers
         }
 
         [HttpGet("GetAllergyById")]
-        public ActionResult<AllergyMasters> Get(string id)
+        public ActionResult<AllergyMasters> GetAllergybyId(string id)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace MasterData.Service.Api.Controllers
         }
 
         [HttpGet("GetAllergyByDescription")]
-        public ActionResult<AllergyMasters> GetDescription(string desc)
+        public ActionResult<AllergyMasters> GetDescriptionAllergy(string desc)
         {
             try
             {
@@ -75,13 +75,13 @@ namespace MasterData.Service.Api.Controllers
         }
 
         [HttpPost("CreateNewAllergy")]
-        public ActionResult<AllergyMasters> Create(AllergyMasters id)
+        public ActionResult<AllergyMasters> CreateAllergy(AllergyMasters id)
         {
             _allergyMasterService.CreateAllergy(id);
             return CreatedAtRoute("GetAllergyById", new { id = id.Id.ToString() }, id);
         }
         [HttpPut("UpdateAllergy")]
-        public IActionResult Update(string id, AllergyMasters allergyMastersIn)
+        public IActionResult UpdateAllergy(string id, AllergyMasters allergyMastersIn)
         {
             var allergy = _allergyMasterService.GetAllergyById(id);
 
@@ -89,7 +89,6 @@ namespace MasterData.Service.Api.Controllers
             {
                 return NotFound();
             }
-
             _allergyMasterService.Update(id, allergyMastersIn);
 
             return NoContent();

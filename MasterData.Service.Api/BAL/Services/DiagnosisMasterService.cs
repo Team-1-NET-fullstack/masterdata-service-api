@@ -30,9 +30,9 @@ namespace MasterData.Service.Api.BAL.Services
         public DiagnosisMasters GetDiagnosisById(string id) =>
             _diagnosisMasters.Find<DiagnosisMasters>(diagnosis => diagnosis.Id == id).FirstOrDefault();
         public DiagnosisMasters GetDiagnosisByDescription(string desc) =>
-            _diagnosisMasters.Find<DiagnosisMasters>(diagnosis => diagnosis.Description == desc).First();
+            _diagnosisMasters.Find<DiagnosisMasters>(diagnosis => diagnosis.Description == desc).FirstOrDefault();
         public DiagnosisMasters GetDiagnosisByName(string name) =>
-            _diagnosisMasters.Find<DiagnosisMasters>(diagnosis => diagnosis.Name == name).First();
+            _diagnosisMasters.Find<DiagnosisMasters>(diagnosis => diagnosis.Name == name).FirstOrDefault();
         public DiagnosisMasters CreateDiagnosis(DiagnosisMasters id)
         {
             _diagnosisMasters.InsertOne(id);
