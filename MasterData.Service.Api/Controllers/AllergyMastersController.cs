@@ -34,7 +34,7 @@ namespace MasterData.Service.Api.Controllers
             }
         }
 
-        [HttpGet("{id:length(24)}", Name = "GetAllergyById")]
+        [HttpGet("GetAllergyById")]
         public ActionResult<AllergyMasters> Get(string id)
         {
             try
@@ -80,7 +80,7 @@ namespace MasterData.Service.Api.Controllers
             _allergyMasterService.CreateAllergy(id);
             return CreatedAtRoute("GetAllergyById", new { id = id.Id.ToString() }, id);
         }
-        [HttpPut("{id:length(24)}", Name = ("UpdateAllergy"))]
+        [HttpPut("UpdateAllergy")]
         public IActionResult Update(string id, AllergyMasters allergyMastersIn)
         {
             var allergy = _allergyMasterService.GetAllergyById(id);

@@ -27,15 +27,70 @@ namespace MasterData.Service.Api.Controllers
         [HttpGet(Name = "GetDiagnosisById")]
         public ActionResult<DiagnosisMasters> Get(string id)
         {
-            var allergy = _diagnosisMasterService.GetDiagnosisById(id);
+            var diagnosis = _diagnosisMasterService.GetDiagnosisById(id);
 
-            if (allergy == null)
+            if (diagnosis == null)
             {
                 return NotFound();
             }
 
-            return allergy;
+            return diagnosis;
         }
+
+        [HttpGet(Name = "GetDiagnosisByName")]
+        public ActionResult<DiagnosisMasters> GetName(string id)
+        {
+            var diagnosis = _diagnosisMasterService.GetDiagnosisByName(id);
+
+            if (diagnosis == null)
+            {
+                return NotFound();
+            }
+
+            return diagnosis;
+        }
+
+        [HttpGet("GetDiagnosisByDescription")]
+        public ActionResult<DiagnosisMasters> GetDescription(string desc)
+        {
+            try
+            {
+                var diagnosis = _diagnosisMasterService.GetDiagnosisByDescription(desc);
+
+                if (diagnosis == null)
+                {
+                    return NotFound();
+                }
+
+                return diagnosis;
+            }
+            catch (Exception)
+            {
+                throw new KeyNotFoundException("Data not found");
+            }
+        }
+
+        [HttpPost("CreateNewDiagnosis")]
+        public ActionResult<DiagnosisMasters> Create(DiagnosisMasters id)
+        {
+            _diagnosisMasterService.CreateDiagnosis(id);
+            return CreatedAtRoute("GetDiagnosisById", new { id = id.Id.ToString() }, id);
+        }
+        [HttpPut("{id:length(24)}", Name = ("UpdateDiagnosis"))]
+        public IActionResult Update(string id, DiagnosisMasters diagnosisMastersIn)
+        {
+            var diagnosis = _diagnosisMasterService.GetDiagnosisById(id);
+
+            if (diagnosis == null)
+            {
+                return NotFound();
+            }
+
+            _diagnosisMasterService.Update(id, diagnosisMastersIn);
+
+            return NoContent();
+        }
+
 
     }
 }
