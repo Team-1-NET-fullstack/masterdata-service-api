@@ -7,17 +7,22 @@ namespace MasterData.Service.Api.DAL
 {
     public class CTGeneralHospitalDatabaseSettings: ICTGeneralHospitalDatabaseSettings
     {
-        
-            public string CTGeneralHospitalCollectionName { get; set; }
-            public string ConnectionString { get; set; }
-            public string DatabaseName { get; set; }
+        public string CTGeneralHospitalCollectionName1 { get; set; }
+        public string CTGeneralHospitalCollectionName2 { get; set; }
+        public string CTGeneralHospitalCollectionName3 { get; set; }
+        public string CTGeneralHospitalCollectionName4 { get; set; }
+        public string ConnectionString { get; set; }
+        public string DatabaseName { get; set; }
         }
 
         public interface ICTGeneralHospitalDatabaseSettings
     {
-            string CTGeneralHospitalCollectionName { get; set; }
-            string ConnectionString { get; set; }
-            string DatabaseName { get; set; }
+        string CTGeneralHospitalCollectionName1 { get; set; }
+        string CTGeneralHospitalCollectionName2 { get; set; }
+        string CTGeneralHospitalCollectionName3 { get; set; }
+        string CTGeneralHospitalCollectionName4 { get; set; }
+        string ConnectionString { get; set; }
+        string DatabaseName { get; set; }
         }
     
 }

@@ -12,23 +12,35 @@ namespace MasterData.Service.Api.BAL.Services
     {
         private readonly IMongoCollection<AllergyMasters> _allergyMasters;
 
-        public AllergyMasterService(ICTGeneralHospitalDatabaseSettings settings){
+        public AllergyMasterService(ICTGeneralHospitalDatabaseSettings settings)
+        {
 
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
 
 
-            _allergyMasters = database.GetCollection<AllergyMasters>(settings.CTGeneralHospitalCollectionName);
+            _allergyMasters = database.GetCollection<AllergyMasters>(settings.CTGeneralHospitalCollectionName1);
         }
-
         public List<AllergyMasters> GetAllAllergy()
         {
             List<AllergyMasters> allergyMasters;
             allergyMasters = _allergyMasters.Find(allergy => true).ToList();
             return allergyMasters;
         }
-
         public AllergyMasters GetAllergyById(string id) =>
             _allergyMasters.Find<AllergyMasters>(allergy => allergy.Id == id).FirstOrDefault();
+
+        public AllergyMasters GetAllergyByDescription(string desc) =>
+            _allergyMasters.Find<AllergyMasters>(allergy => allergy.Description == desc).First();
+        public AllergyMasters CreateAllergy(AllergyMasters id)
+        {
+            _allergyMasters.InsertOne(id);
+            return id;
+        }
+        public void Update(string id, AllergyMasters allergyMasters) =>
+            _allergyMasters.ReplaceOne(allergy => allergy.Id == id, allergyMasters);
+
+
     }
+
 }

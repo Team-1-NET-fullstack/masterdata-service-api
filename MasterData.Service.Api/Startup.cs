@@ -35,9 +35,11 @@ namespace MasterData.Service.Api
             services.AddSingleton<ICTGeneralHospitalDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<CTGeneralHospitalDatabaseSettings>>().Value);
 
-            //services.AddTransient<AllergyMasterService, AllergyMasterService>();
             services.AddSingleton<AllergyMasterService>();
-            services.AddControllers();
+            services.AddSingleton<DiagnosisMasterService>();
+            services.AddSingleton<MedicationMasterService>();
+            services.AddSingleton<ProcedureMasterService>();
+            services.AddControllers().AddNewtonsoftJson(options => options.UseMemberCasing());
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MasterData.Service.Api", Version = "v1" });

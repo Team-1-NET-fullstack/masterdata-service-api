@@ -1,0 +1,31 @@
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace MasterData.Service.Api.Entities
+{
+    public class DiagnosisMasters
+    {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+
+        public string Id { get; set; }
+        public string DiagnosisMastersId { get; set; }
+
+        public string Name { get; set; }
+
+        public string Description { get; set; }
+
+        public string CreatedDate { get; set; }
+
+        public string CreatedBy { get; set; }
+
+        public string UpdatedBy { get; set; }
+
+        public string UpdatedDate { get; set; }
+    }
+}
+
