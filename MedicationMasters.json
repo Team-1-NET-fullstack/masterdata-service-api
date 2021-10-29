@@ -1,0 +1,112 @@
+[
+{
+"MedicationMastersId":"1",
+"Name":"Annovera",
+"Description":"Annovera",
+"Dosage":"3 times a day",
+"IsDeprecated":"0",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"MedicationMastersId":"2",
+"Name":"Apixaban",
+"Description":"Apixaban",
+"Dosage":"2 times a day",
+"IsDeprecated":"1",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"MedicationMastersId":"3",
+"Name":"Apokyn",
+"Description":"Apokyn",
+"Dosage":"once a day",
+"IsDeprecated":"0",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"MedicationMastersId":"4",
+"Name":"Aricept",
+"Description":"Aricept",
+"Dosage":"twice a day",
+"IsDeprecated":"1",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"MedicationMastersId":"5",
+"Name":"Aristada",
+"Description":"Aristada",
+"Dosage":"thrice a day",
+"IsDeprecated":"1",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"MedicationMastersId":"6",
+"Name":"Afinitor",
+"Description":"Afinitor",
+"Dosage":"twice a day",
+"IsDeprecated":"0",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"MedicationMastersId":"7",
+"Name":"Azithromycin",
+"Description":"Azithromycin",
+"Dosage":"twice a day",
+"IsDeprecated":"0",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"MedicationMastersId":"8",
+"Name":"Amlodipine",
+"Description":"Amlodipine",
+"Dosage":"twice a day",
+"IsDeprecated":"0",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"MedicationMastersId":"9",
+"Name":"Azathioprine",
+"Description":"Azathioprine",
+"Dosage":"twice a day",
+"IsDeprecated":"1",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+},
+{
+"MedicationMastersId":"10",
+"Name":"Aleve",
+"Description":"Aleve",
+"Dosage":"twice a day",
+"IsDeprecated":"1",
+"CreatedDate":"2021-01-12 05:19:12",
+"CreatedBy":"1",
+"UpdatedBy":"1",
+"UpdatedDate":"2021-01-12 05:19:12"
+}
+]
