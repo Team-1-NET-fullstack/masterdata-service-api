@@ -29,6 +29,7 @@ namespace MasterData.Service.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(); 
             services.Configure<CTGeneralHospitalDatabaseSettings>(
                 Configuration.GetSection(nameof(CTGeneralHospitalDatabaseSettings)));
 
@@ -55,6 +56,10 @@ namespace MasterData.Service.Api
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MasterData.Service.Api v1"));
             }
+            app.UseCors(x => x
+.AllowAnyOrigin()
+.AllowAnyMethod()
+.AllowAnyHeader());
 
             app.UseRouting();
 

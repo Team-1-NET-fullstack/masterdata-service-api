@@ -76,7 +76,7 @@ namespace MasterData.Service.Api.Controllers
             _diagnosisMasterService.CreateDiagnosis(id);
             return CreatedAtRoute("GetDiagnosisById", new { id = id.Id.ToString() }, id);
         }
-        [HttpPut("{id:length(24)}", Name = ("UpdateDiagnosis"))]
+        [HttpPut(Name = ("UpdateDiagnosis"))]
         public IActionResult UpdateDiagnosis(string id, DiagnosisMasters diagnosisMastersIn)
         {
             var diagnosis = _diagnosisMasterService.GetDiagnosisById(id);
