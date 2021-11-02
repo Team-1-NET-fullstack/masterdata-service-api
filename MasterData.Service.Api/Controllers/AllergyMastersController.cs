@@ -83,16 +83,18 @@ namespace MasterData.Service.Api.Controllers
         [HttpPut("UpdateAllergy")]
         public IActionResult UpdateAllergy(string id, AllergyMasters allergyMastersIn)
         {
-            var allergy = _allergyMasterService.GetAllergyById(id);
+                var allergy = _allergyMasterService.GetAllergyById(id);
 
-            if (allergy == null)
-            {
-                return NotFound();
+                if (allergy == null)
+                {
+                    return NotFound();
+                }
+                _allergyMasterService.Update(id, allergyMastersIn);
+
+                return NoContent();
+           
             }
-            _allergyMasterService.Update(id, allergyMastersIn);
-
-            return NoContent();
-        }
+        
 
 
     }
