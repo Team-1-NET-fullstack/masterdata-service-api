@@ -28,21 +28,22 @@ namespace MasterData.Service.Api.BAL.Services
             return allergyMasters;
         }
         public AllergyMasters GetAllergyById(string id) =>
-            _allergyMasters.Find<AllergyMasters>(allergy => allergy.AllergyMastersId == id).FirstOrDefault();
+            _allergyMasters.Find<AllergyMasters>(allergy => allergy.Id == id).FirstOrDefault();
 
         public AllergyMasters GetAllergyByDescription(string desc) =>
             _allergyMasters.Find<AllergyMasters>(allergy => allergy.Description.ToLower() == desc.ToLower()).First();
         public async Task<AllergyMasters> CreateAllergy(AllergyMasters id)
         {
+           
             await _allergyMasters.InsertOneAsync(id);
             return id;
         }
-      
-
-        public void Update(string id, AllergyMasters allergyMasters) =>
-            _allergyMasters.ReplaceOne(allergy => allergy.AllergyMastersId == id, allergyMasters);
-
+        public async Task UpdateAsync(string id, AllergyMasters allergyMasters) =>
+           await _allergyMasters.ReplaceOneAsync(allergy => allergy.Id == id, allergyMasters);
+        
+        }
 
     }
 
-}
+
+

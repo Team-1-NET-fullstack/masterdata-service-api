@@ -9,7 +9,7 @@ namespace MasterData.Service.Api.Entities
         [BsonId]
         public string Id { get; set; }
         
-        public string AllergyMastersId { get; set; }
+        //public string AllergyMastersId { get; set; }
 
         [BsonElement("Description")]
         public string Description { get; set; }

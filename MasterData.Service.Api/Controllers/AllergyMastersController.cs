@@ -34,7 +34,6 @@ namespace MasterData.Service.Api.Controllers
 
             }
         }
-
         [HttpGet("GetAllergyById")]
         public ActionResult<AllergyMasters> GetAllergybyId(string id)
         {
@@ -91,22 +90,17 @@ namespace MasterData.Service.Api.Controllers
             }
         }
        
-
-
-
         [HttpPut("UpdateAllergy")]
-        public IActionResult UpdateAllergy(string id, AllergyMasters allergyMastersIn)
+        public async Task<IActionResult> UpdateAllergy(string id, AllergyMasters allergyMastersIn)
         {
             try
             {
-                var allergy = _allergyMasterService.GetAllergyById(id);
-
+                var allergy =  _allergyMasterService.GetAllergyById(id);
                 if (allergy == null)
                 {
                     return NotFound();
                 }
-                _allergyMasterService.Update(id, allergyMastersIn);
-
+                await _allergyMasterService.UpdateAsync(id, allergyMastersIn);
                 return NoContent();
             }
             catch (FormatException e)
