@@ -19,7 +19,7 @@ namespace MasterData.Service.Api.BAL.Services
             var database = client.GetDatabase(settings.DatabaseName);
 
 
-            _allergyMasters = database.GetCollection<AllergyMasters>(settings.CTGeneralHospitalCollectionName1);
+            _allergyMasters = database.GetCollection<AllergyMasters>(settings.AllergyCollection);
         }
         public List<AllergyMasters> GetAllAllergy()
         {
@@ -28,17 +28,19 @@ namespace MasterData.Service.Api.BAL.Services
             return allergyMasters;
         }
         public AllergyMasters GetAllergyById(string id) =>
-            _allergyMasters.Find<AllergyMasters>(allergy => allergy.Id == id).FirstOrDefault();
+            _allergyMasters.Find<AllergyMasters>(allergy => allergy.AllergyMastersId == id).FirstOrDefault();
 
         public AllergyMasters GetAllergyByDescription(string desc) =>
-            _allergyMasters.Find<AllergyMasters>(allergy => allergy.Description == desc).First();
-        public AllergyMasters CreateAllergy(AllergyMasters id)
+            _allergyMasters.Find<AllergyMasters>(allergy => allergy.Description.ToLower() == desc.ToLower()).First();
+        public async Task<AllergyMasters> CreateAllergy(AllergyMasters id)
         {
-            _allergyMasters.InsertOne(id);
+            await _allergyMasters.InsertOneAsync(id);
             return id;
         }
+      
+
         public void Update(string id, AllergyMasters allergyMasters) =>
-            _allergyMasters.ReplaceOne(allergy => allergy.Id == id, allergyMasters);
+            _allergyMasters.ReplaceOne(allergy => allergy.AllergyMastersId == id, allergyMasters);
 
 
     }

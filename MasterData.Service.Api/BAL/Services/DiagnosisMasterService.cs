@@ -19,7 +19,7 @@ namespace MasterData.Service.Api.BAL.Services
             var database = client.GetDatabase(settings.DatabaseName);
 
 
-            _diagnosisMasters = database.GetCollection<DiagnosisMasters>(settings.CTGeneralHospitalCollectionName3);
+            _diagnosisMasters = database.GetCollection<DiagnosisMasters>(settings.DiagnosisCollection);
         }
         public List<DiagnosisMasters> GetAllDiagnosis()
         {
@@ -30,7 +30,7 @@ namespace MasterData.Service.Api.BAL.Services
         public DiagnosisMasters GetDiagnosisById(string id) =>
             _diagnosisMasters.Find<DiagnosisMasters>(diagnosis => diagnosis.Id == id).FirstOrDefault();
         public DiagnosisMasters GetDiagnosisByDescription(string desc) =>
-            _diagnosisMasters.Find<DiagnosisMasters>(diagnosis => diagnosis.Description == desc).FirstOrDefault();
+            _diagnosisMasters.Find<DiagnosisMasters>(diagnosis => diagnosis.Description.ToLower() == desc.ToLower()).First();
         public DiagnosisMasters GetDiagnosisByName(string name) =>
             _diagnosisMasters.Find<DiagnosisMasters>(diagnosis => diagnosis.Name == name).FirstOrDefault();
         public DiagnosisMasters CreateDiagnosis(DiagnosisMasters id)

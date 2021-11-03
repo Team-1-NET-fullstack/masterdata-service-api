@@ -17,7 +17,7 @@ namespace MasterData.Service.Api.BAL.Services
 
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
-            _procedureMasters = database.GetCollection<ProcedureMasters>(settings.CTGeneralHospitalCollectionName3);
+            _procedureMasters = database.GetCollection<ProcedureMasters>(settings.ProcedureCollection);
         }
         public List<ProcedureMasters> GetAllProcedure()
         {
@@ -28,11 +28,13 @@ namespace MasterData.Service.Api.BAL.Services
         public ProcedureMasters GetProcedureById(string id) =>
             _procedureMasters.Find<ProcedureMasters>(procedure => procedure.Id == id).FirstOrDefault();
         public ProcedureMasters GetProcedureByDescription(string desc) =>
-            _procedureMasters.Find<ProcedureMasters>(procedure => procedure.Description == desc).First();
+            _procedureMasters.Find<ProcedureMasters>(procedure => procedure.Description.ToLower() == desc.ToLower()).First();
         public ProcedureMasters GetProcedureByName(string name) =>
             _procedureMasters.Find<ProcedureMasters>(procedure => procedure.Name == name).First();
         public ProcedureMasters CreateProcedure(ProcedureMasters id)
         {
+            //id.ProcedureMastersId = "0";
+            //id.Id ="0";
             _procedureMasters.InsertOne(id);
             return id;
         }

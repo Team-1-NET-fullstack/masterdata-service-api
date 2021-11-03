@@ -2,6 +2,7 @@
 using MasterData.Service.Api.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,22 +21,41 @@ namespace MasterData.Service.Api.Controllers
         }
 
         [HttpGet("GetAll")]
-        public ActionResult<List<DiagnosisMasters>> GetAllDiagnosis() =>
-            _diagnosisMasterService.GetAllDiagnosis();
+        public ActionResult<List<DiagnosisMasters>> GetAllDiagnosis()
+        {
+            try
+            {
+               return _diagnosisMasterService.GetAllDiagnosis();
+            }
+            catch (Exception e)
+            {
+                throw new FileNotFoundException("Data not found:" + e.Message);
+
+            }
+        }
 
 
-        [HttpGet(Name = "GetDiagnosisById")]
+[HttpGet(Name = "GetDiagnosisById")]
         public ActionResult<DiagnosisMasters> GetDiagnosisbyId(string id)
         {
-            var diagnosis = _diagnosisMasterService.GetDiagnosisById(id);
-
-            if (diagnosis == null)
+            try
             {
-                return NotFound();
-            }
+                var diagnosis = _diagnosisMasterService.GetDiagnosisById(id);
 
-            return diagnosis;
-        }
+                if (diagnosis == null)
+                {
+                    return NotFound();
+                }
+
+                return diagnosis;
+            
+            }
+            catch (Exception e)
+            {
+                throw new KeyNotFoundException("Data not found:" + e.Message);
+
+    }
+}
 
         //[HttpGet(Name = "GetDiagnosisByName")]
         //public ActionResult<DiagnosisMasters> GetName(string name)
@@ -64,21 +84,30 @@ namespace MasterData.Service.Api.Controllers
 
                 return diagnosis;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new KeyNotFoundException("Data not found");
+                throw new KeyNotFoundException("Data not found:" + e.Message);
+
             }
         }
 
         [HttpPost("CreateNewDiagnosis")]
         public ActionResult<DiagnosisMasters> Create(DiagnosisMasters id)
         {
-            _diagnosisMasterService.CreateDiagnosis(id);
-            return CreatedAtRoute("GetDiagnosisById", new { id = id.Id.ToString() }, id);
+            try
+            {
+                _diagnosisMasterService.CreateDiagnosis(id);
+                return CreatedAtRoute("GetDiagnosisById", new { id = id.Id.ToString() }, id);
+            }
+            catch (FormatException e)
+            {
+                throw new FormatException("Data not inserted:" + e.Message);
+            }
         }
         [HttpPut(Name = ("UpdateDiagnosis"))]
         public IActionResult UpdateDiagnosis(string id, DiagnosisMasters diagnosisMastersIn)
         {
+            try { 
             var diagnosis = _diagnosisMasterService.GetDiagnosisById(id);
 
             if (diagnosis == null)
@@ -89,6 +118,11 @@ namespace MasterData.Service.Api.Controllers
             _diagnosisMasterService.Update(id, diagnosisMastersIn);
 
             return NoContent();
+            }
+            catch (FormatException e)
+            {
+                throw new FormatException("Data not inserted:" + e.Message);
+            }
         }
 
 

@@ -3,6 +3,7 @@ using MasterData.Service.Api.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,13 +21,24 @@ namespace MasterData.Service.Api.Controllers
         }
 
         [HttpGet("GetAll")]
-        public ActionResult<List<ProcedureMasters>> GetAllProcedure() =>
-            _procedureMasterService.GetAllProcedure();
+        public ActionResult<List<ProcedureMasters>> GetAllProcedure()
+        {
+            try
+            {
+                return _procedureMasterService.GetAllProcedure();
 
+            }
+            catch (Exception e)
+            {
+                throw new FileNotFoundException("Data not found:" + e.Message);
 
-        [HttpGet(Name = "GetProcedureById")]
+            }
+        }
+
+[HttpGet(Name = "GetProcedureById")]
         public ActionResult<ProcedureMasters> GetProcedurebyId(string id)
         {
+            try { 
             var procedure = _procedureMasterService.GetProcedureById(id);
 
             if (procedure == null)
@@ -36,6 +48,12 @@ namespace MasterData.Service.Api.Controllers
 
             return procedure;
         }
+            catch (Exception e)
+            {
+                throw new KeyNotFoundException("Data not found:" + e.Message);
+
+    }
+}
 
 
         [HttpGet("GetProcedureByDescription")]
@@ -52,31 +70,47 @@ namespace MasterData.Service.Api.Controllers
 
                 return procedure;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new KeyNotFoundException("Data not found");
+                throw new KeyNotFoundException("Desc not found:"+e.Message);
+
             }
         }
 
         [HttpPost("CreateNewProcedure")]
         public ActionResult<ProcedureMasters> CreateProcedure(ProcedureMasters id)
         {
+            try { 
+            //id.Id = "0";
+            //id.ProcedureMastersId = "0";
             _procedureMasterService.CreateProcedure(id);
-            return CreatedAtRoute("GetProcedureById", new { id = id.Id.ToString() }, id);
+            return CreatedAtRoute("GetProcedureById", new { id = id.ProcedureMastersId.ToString() }, id);
+            }
+            catch (FormatException e)
+            {
+                throw new FormatException("Data not inserted:" + e.Message);
+            }
         }
         [HttpPut("UpdateProcedure")]
         public IActionResult UpdateProcedure(string id, ProcedureMasters procedureMastersIn)
         {
-            var procedure = _procedureMasterService.GetProcedureById(id);
-
-            if (procedure == null)
+            try
             {
-                return NotFound();
+                var procedure = _procedureMasterService.GetProcedureById(id);
+
+                if (procedure == null)
+                {
+                    return NotFound();
+                }
+
+                _procedureMasterService.UpdateProcedure(id, procedureMastersIn);
+
+                return NoContent();
             }
-
-            _procedureMasterService.UpdateProcedure(id, procedureMastersIn);
-
-            return NoContent();
+            catch (FormatException e)
+            {
+                throw new FormatException("Data not inserted:" + e.Message);
+            }
         }
 
     }

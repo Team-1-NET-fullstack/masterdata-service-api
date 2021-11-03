@@ -28,9 +28,10 @@ namespace MasterData.Service.Api.Controllers
             {
                 return _allergyMasterService.GetAllAllergy();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new FileNotFoundException("File not found");
+                throw new FileNotFoundException("Data not found:" + e.Message);
+
             }
         }
 
@@ -48,9 +49,10 @@ namespace MasterData.Service.Api.Controllers
 
                 return allergy;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new KeyNotFoundException("Data not found");
+                throw new KeyNotFoundException("Data not found:" + e.Message);
+
             }
         }
 
@@ -68,21 +70,35 @@ namespace MasterData.Service.Api.Controllers
 
                 return allergy;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new KeyNotFoundException("Data not found");
+                throw new KeyNotFoundException("Desc not found:" + e.Message);
+
             }
         }
 
         [HttpPost("CreateNewAllergy")]
-        public ActionResult<AllergyMasters> CreateAllergy(AllergyMasters id)
+        public async Task<AllergyMasters> CreateAllergy(AllergyMasters id)
         {
-            _allergyMasterService.CreateAllergy(id);
-            return CreatedAtRoute("GetAllergyById", new { id = id.Id.ToString() }, id);
+            try
+            {
+               await _allergyMasterService.CreateAllergy(id);
+                return id;
+            }
+            catch(FormatException e)
+            {
+                throw new FormatException("Data not inserted:" + e.Message);
+            }
         }
+       
+
+
+
         [HttpPut("UpdateAllergy")]
         public IActionResult UpdateAllergy(string id, AllergyMasters allergyMastersIn)
         {
+            try
+            {
                 var allergy = _allergyMasterService.GetAllergyById(id);
 
                 if (allergy == null)
@@ -92,8 +108,13 @@ namespace MasterData.Service.Api.Controllers
                 _allergyMasterService.Update(id, allergyMastersIn);
 
                 return NoContent();
-           
             }
+            catch (FormatException e)
+            {
+               throw new FormatException("Data not inserted:" + e.Message);
+            }
+
+        }
         
 
 

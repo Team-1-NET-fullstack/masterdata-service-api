@@ -64,9 +64,10 @@ namespace MasterData.Service.Api.Controllers
 
                 return medication;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new KeyNotFoundException("Data not found");
+                throw new KeyNotFoundException("Data not found:" + e.Message);
+
             }
         }
 

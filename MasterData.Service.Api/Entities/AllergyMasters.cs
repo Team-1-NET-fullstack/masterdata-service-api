@@ -5,12 +5,13 @@ namespace MasterData.Service.Api.Entities
 {
     public class AllergyMasters
     {
-        [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-
+        [BsonId]
         public string Id { get; set; }
+        
         public string AllergyMastersId { get; set; }
 
+        [BsonElement("Description")]
         public string Description { get; set; }
 
         public string IsFatal { get; set; }

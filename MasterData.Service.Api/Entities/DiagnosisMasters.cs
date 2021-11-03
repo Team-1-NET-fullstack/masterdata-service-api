@@ -9,14 +9,16 @@ namespace MasterData.Service.Api.Entities
 {
     public class DiagnosisMasters
     {
-        [BsonId]
+        
         [BsonRepresentation(BsonType.ObjectId)]
 
         public string Id { get; set; }
+        [BsonId]
         public string DiagnosisMastersId { get; set; }
-
+        [BsonElement("Name")]
         public string Name { get; set; }
 
+        [BsonElement("Description")]
         public string Description { get; set; }
 
         public string CreatedDate { get; set; }

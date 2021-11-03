@@ -18,7 +18,7 @@ namespace MasterData.Service.Api.BAL.Services
 
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
-            _medicationMasters = database.GetCollection<MedicationMasters>(settings.CTGeneralHospitalCollectionName2);
+            _medicationMasters = database.GetCollection<MedicationMasters>(settings.MedicationCollection);
         }
         public List<MedicationMasters> GetAllMedication()
         {
@@ -29,7 +29,7 @@ namespace MasterData.Service.Api.BAL.Services
         public MedicationMasters GetMedicationById(string id) =>
             _medicationMasters.Find<MedicationMasters>(medication => medication.Id == id).FirstOrDefault();
         public MedicationMasters GetMedicationByDescription(string desc) =>
-            _medicationMasters.Find<MedicationMasters>(medication => medication.Description == desc).First();
+            _medicationMasters.Find<MedicationMasters>(medication => medication.Description.ToLower() == desc.ToLower()).First();
         public MedicationMasters GetMedicationByName(string name) =>
             _medicationMasters.Find<MedicationMasters>(medication => medication.Name == name).First();
         public MedicationMasters CreateMedication(MedicationMasters id)
