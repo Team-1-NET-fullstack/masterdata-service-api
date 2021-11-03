@@ -1,92 +1,50 @@
 [
 {
-"AllergyMastersId":"1",
+
 "Description":"Pet",
-"IsFatal":"0",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"IsFatal":false
 }
 ,{
-"AllergyMastersId":"2",
 "Description":"Mold",
-"IsFatal":"0",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"IsFatal":true
 },
 {
-"AllergyMastersId":"3",
+
 "Description":"Insect",
-"IsFatal":"0",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"IsFatal":true
 },
 {
-"AllergyMastersId":"4",
+
 "Description":"Drug",
-"IsFatal":"",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"IsFatal":true
 },
 {
-"AllergyMastersId":"5",
+
 "Description":"Food",
-"IsFatal":"1",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"IsFatal":true
 },
 {
-"AllergyMastersId":"6",
+
 "Description":"Pollen",
-"IsFatal":"0",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"IsFatal":true
 },
 {
-"AllergyMastersId":"7",
+
 "Description":"Latex",
-"IsFatal":"1",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"IsFatal":false
 },
 {
-"AllergyMastersId":"8",
+
 "Description":"Peanut",
-"IsFatal":"0",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"IsFatal":false
 },
 {
-"AllergyMastersId":"9",
+
 "Description":"Milk",
-"IsFatal":"0",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
-},
+"IsFatal":false
 {
-"AllergyMastersId":"10",
+
 "Description":"Dust",
-"IsFatal":"0",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"IsFatal":false
 }
 ]

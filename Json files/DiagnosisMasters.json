@@ -1,94 +1,50 @@
 [
 {
-"DiagnosisMastersId":"1",
 "Name":"Headache, Migraine",
-"Description":"Headache, Migraine",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"Description":"Headache, Migraine"
 }
 ,
 {
-"DiagnosisMastersId":"2",
 "Name":"Hypertension",
-"Description":"Hypertension",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"Description":"Hypertension"
 },
 {
-"DiagnosisMastersId":"3",
 "Name":"Speech Defects",
-"Description":"Speech Defects",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"Description":"Speech Defects"
+
 }
 ,
 {
-"DiagnosisMastersId":"4",
 "Name":"Hearing Loss",
-"Description":"Hearing Loss",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"Description":"Hearing Loss"
 },{
-"DiagnosisMastersId":"5",
 "Name":"Down Syndrome",
-"Description":"Down Syndrome",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"Description":"Down Syndrome"
 }
 ,
 {
-"DiagnosisMastersId":"6",
+
 "Name":"Visual Impairment",
-"Description":"Visual Impairment",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"Description":"Visual Impairment"
 },{
-"DiagnosisMastersId":"7",
+
 "Name":"Anxiety Disorder",
-"Description":"Anxiety Disorder",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"Description":"Anxiety Disorder"
 }
 ,
 {
-"DiagnosisMastersId":"8",
+
 "Name":"Constipation",
-"Description":"Constipation",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"Description":"Constipation"
 },{
-"DiagnosisMastersId":"9",
+
 "Name":"Autism Spectrum Disorder",
-"Description":"Autism Spectrum Disorder",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
+"Description":"Autism Spectrum Disorder"
 }
 ,
 {
-"DiagnosisMastersId":"10",
+
 "Name":"Intellectual Disability",
-"Description":"Intellectual Disability",
-"CreatedDate":"2021-01-12 05:19:12",
-"CreatedBy":"1",
-"UpdatedBy":"1",
-"UpdatedDate":"2021-01-12 05:19:12"
-},
+"Description":"Intellectual Disability"
+}
 ]
