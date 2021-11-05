@@ -38,10 +38,11 @@
 "Description":"Peanut",
 "IsFatal":false
 },
-{
+  {
 
-"Description":"Milk",
-"IsFatal":false
+    "Description": "Milk",
+    "IsFatal": false
+  },
 {
 
 "Description":"Dust",

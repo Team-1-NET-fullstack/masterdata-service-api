@@ -29,13 +29,11 @@ namespace MasterData.Service.Api.BAL.Services
             _procedureMasters.Find<ProcedureMasters>(procedure => procedure.Id == id).FirstOrDefault();
         public ProcedureMasters GetProcedureByDescription(string desc) =>
             _procedureMasters.Find<ProcedureMasters>(procedure => procedure.Description.ToLower() == desc.ToLower()).First();
-        public ProcedureMasters GetProcedureByName(string name) =>
-            _procedureMasters.Find<ProcedureMasters>(procedure => procedure.Name == name).First();
-        public ProcedureMasters CreateProcedure(ProcedureMasters id)
+       
+        public async Task<ProcedureMasters> CreateProcedure(ProcedureMasters id)
         {
-            //id.ProcedureMastersId = "0";
-            //id.Id ="0";
-            _procedureMasters.InsertOne(id);
+
+            await _procedureMasters.InsertOneAsync(id);
             return id;
         }
         public void UpdateProcedure(string id, ProcedureMasters procedureMasters) =>

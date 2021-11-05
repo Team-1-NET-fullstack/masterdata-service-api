@@ -30,14 +30,13 @@ namespace MasterData.Service.Api.BAL.Services
             _medicationMasters.Find<MedicationMasters>(medication => medication.Id == id).FirstOrDefault();
         public MedicationMasters GetMedicationByDescription(string desc) =>
             _medicationMasters.Find<MedicationMasters>(medication => medication.Description.ToLower() == desc.ToLower()).First();
-        public MedicationMasters GetMedicationByName(string name) =>
-            _medicationMasters.Find<MedicationMasters>(medication => medication.Name == name).First();
-        public MedicationMasters CreateMedication(MedicationMasters id)
+        public async Task<MedicationMasters> CreateMedication(MedicationMasters id)
         {
-            _medicationMasters.InsertOne(id);
+            await _medicationMasters.InsertOneAsync(id);
             return id;
         }
-        public void Update(string id, MedicationMasters medicationMasters) =>
-            _medicationMasters.ReplaceOne(medication => medication.Id == id, medicationMasters);
+        
+        public async Task UpdateAsync(string id, MedicationMasters medicationMasters) =>
+           await _medicationMasters.ReplaceOneAsync(medication => medication.Id == id, medicationMasters);
     }
 }

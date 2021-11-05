@@ -37,19 +37,6 @@ namespace MasterData.Service.Api.Controllers
             return medication;
         }
 
-        //[HttpGet(Name = "GetMedicationByName")]
-        //public ActionResult<MedicationMasters> GetMedicationbyName(string id)
-        //{
-        //    var medication = _medicationMasterService.GetMedicationByName(id);
-
-        //    if (medication == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return medication;
-        //}
-
         [HttpGet("GetMedicationByDescription")]
         public ActionResult<MedicationMasters> GetMedicationbyDescription(string desc)
         {
@@ -72,25 +59,42 @@ namespace MasterData.Service.Api.Controllers
         }
 
         [HttpPost("CreateNewMedication")]
-        public ActionResult<MedicationMasters> CreateMedication(MedicationMasters id)
-        {
-            _medicationMasterService.CreateMedication(id);
-            return CreatedAtRoute("GetMedicationById", new { id = id.Id.ToString() }, id);
-        }
-        [HttpPut("UpdateMedication")]
-        public IActionResult UpdateMedication(string id, MedicationMasters medicationMastersIn)
-        {
-            var medication = _medicationMasterService.GetMedicationById(id);
-
-            if (medication == null)
+        public async Task<MedicationMasters> CreateMedication(MedicationMasters id)
+        { 
+            try
             {
-                return NotFound();
+                await _medicationMasterService.CreateMedication(id);
+                return id;
             }
-
-            _medicationMasterService.Update(id, medicationMastersIn);
-
-            return NoContent();
+            catch (FormatException e)
+            {
+                throw new FormatException("Data not inserted:" + e.Message);
+            }
         }
+
+        
+        [HttpPut("UpdateMedication")]
+        public async Task<IActionResult> UpdateMedication(string id, MedicationMasters medicationMastersIn)
+        {
+            try
+            {
+                var medication = _medicationMasterService.GetMedicationById(id);
+
+                if (medication == null)
+                {
+                    return NotFound();
+                }
+
+                await _medicationMasterService.UpdateAsync(id, medicationMastersIn);
+                return NoContent();
+            }
+            catch (FormatException e)
+            {
+                throw new FormatException("Data not inserted:" + e.Message);
+}
+        }
+          
+            
 
     }
 }

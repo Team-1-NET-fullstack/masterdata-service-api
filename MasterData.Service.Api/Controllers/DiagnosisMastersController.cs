@@ -20,22 +20,7 @@ namespace MasterData.Service.Api.Controllers
             _diagnosisMasterService = diagnosisMasterService;
         }
 
-        [HttpGet("GetAll")]
-        public ActionResult<List<DiagnosisMasters>> GetAllDiagnosis()
-        {
-            try
-            {
-               return _diagnosisMasterService.GetAllDiagnosis();
-            }
-            catch (Exception e)
-            {
-                throw new FileNotFoundException("Data not found:" + e.Message);
-
-            }
-        }
-
-
-[HttpGet(Name = "GetDiagnosisById")]
+        [HttpGet("GetDiagnosisById")]
         public ActionResult<DiagnosisMasters> GetDiagnosisbyId(string id)
         {
             try
@@ -57,21 +42,8 @@ namespace MasterData.Service.Api.Controllers
     }
 }
 
-        //[HttpGet(Name = "GetDiagnosisByName")]
-        //public ActionResult<DiagnosisMasters> GetName(string name)
-        //{
-        //    var diagnosis = _diagnosisMasterService.GetDiagnosisByName(name);
-
-        //    if (diagnosis == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return diagnosis;
-        //}
-
         [HttpGet("GetDiagnosisByDescription")]
-        public ActionResult<DiagnosisMasters> GetDesc(string desc)
+        public ActionResult<DiagnosisMasters> GetDescriptionDiagnosis(string desc)
         {
             try
             {
@@ -92,32 +64,32 @@ namespace MasterData.Service.Api.Controllers
         }
 
         [HttpPost("CreateNewDiagnosis")]
-        public ActionResult<DiagnosisMasters> Create(DiagnosisMasters id)
+        public async Task<DiagnosisMasters> CreateNewDiagnosis(DiagnosisMasters id)
         {
             try
             {
-                _diagnosisMasterService.CreateDiagnosis(id);
-                return CreatedAtRoute("GetDiagnosisById", new { id = id.Id.ToString() }, id);
+                await _diagnosisMasterService.CreateDiagnosis(id);
+                return id;
             }
             catch (FormatException e)
             {
                 throw new FormatException("Data not inserted:" + e.Message);
             }
         }
-        [HttpPut(Name = ("UpdateDiagnosis"))]
-        public IActionResult UpdateDiagnosis(string id, DiagnosisMasters diagnosisMastersIn)
+
+
+
+        [HttpPut("UpdateDiagnosis")]
+        public async Task<IActionResult> UpdateDiagnosis(string id, DiagnosisMasters diagnosisMastersIn)
         {
-            try { 
-            var diagnosis = _diagnosisMasterService.GetDiagnosisById(id);
-
-            if (diagnosis == null)
-            {
-                return NotFound();
-            }
-
-            _diagnosisMasterService.Update(id, diagnosisMastersIn);
-
-            return NoContent();
+            try {
+                var diagnosis = _diagnosisMasterService.GetDiagnosisById(id);
+                if (diagnosis == null)
+                {
+                    return NotFound();
+                }
+                await _diagnosisMasterService.UpdateAsync(id, diagnosisMastersIn);
+                return NoContent();
             }
             catch (FormatException e)
             {

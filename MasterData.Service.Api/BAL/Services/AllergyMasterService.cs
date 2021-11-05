@@ -30,16 +30,25 @@ namespace MasterData.Service.Api.BAL.Services
         public AllergyMasters GetAllergyById(string id) =>
             _allergyMasters.Find<AllergyMasters>(allergy => allergy.Id == id).FirstOrDefault();
 
-        public AllergyMasters GetAllergyByDescription(string desc) =>
-            _allergyMasters.Find<AllergyMasters>(allergy => allergy.Description.ToLower() == desc.ToLower()).First();
+        public AllergyMasters GetAllergyByDescription(string desc)
+        {
+            try {
+                return _allergyMasters.Find<AllergyMasters>(allergy => allergy.Description.ToLower() == desc.ToLower()).First();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
         public async Task<AllergyMasters> CreateAllergy(AllergyMasters id)
         {
            
             await _allergyMasters.InsertOneAsync(id);
             return id;
         }
-        public async Task UpdateAsync(string id, AllergyMasters allergyMasters) =>
-           await _allergyMasters.ReplaceOneAsync(allergy => allergy.Id == id, allergyMasters);
+
+        public async Task UpdateAsync(AllergyMasters allergyMastersIn) =>
+           await _allergyMasters.ReplaceOneAsync(allergy => allergy.Id == allergyMastersIn.Id, allergyMastersIn);
         
         }
 

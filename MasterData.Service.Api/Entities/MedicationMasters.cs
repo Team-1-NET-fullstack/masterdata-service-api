@@ -11,10 +11,10 @@ namespace MasterData.Service.Api.Entities
     {
         
         [BsonRepresentation(BsonType.ObjectId)]
-
-        public string Id { get; set; }
         [BsonId]
-        public string MedicationMastersId { get; set; }
+        public string Id { get; set; }
+        
+        //public string MedicationMastersId { get; set; }
         [BsonElement("Name")]
         public string Name { get; set; }
 
@@ -23,13 +23,13 @@ namespace MasterData.Service.Api.Entities
         [BsonElement("Description")]
         public string Description { get; set; }
 
-        public string CreatedDate { get; set; }
+        //public string CreatedDate { get; set; }
 
-        public string CreatedBy { get; set; }
+        //public string CreatedBy { get; set; }
 
-        public string UpdatedBy { get; set; }
+        //public string UpdatedBy { get; set; }
 
-        public string UpdatedDate { get; set; }
+        //public string UpdatedDate { get; set; }
     }
 }
 

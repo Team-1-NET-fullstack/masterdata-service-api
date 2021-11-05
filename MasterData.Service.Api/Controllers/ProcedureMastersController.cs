@@ -35,7 +35,7 @@ namespace MasterData.Service.Api.Controllers
             }
         }
 
-[HttpGet(Name = "GetProcedureById")]
+[HttpGet("GetProcedureById")]
         public ActionResult<ProcedureMasters> GetProcedurebyId(string id)
         {
             try { 
@@ -78,13 +78,12 @@ namespace MasterData.Service.Api.Controllers
         }
 
         [HttpPost("CreateNewProcedure")]
-        public ActionResult<ProcedureMasters> CreateProcedure(ProcedureMasters id)
+        public async Task<ProcedureMasters> CreateAllergy(ProcedureMasters id)
         {
-            try { 
-            //id.Id = "0";
-            //id.ProcedureMastersId = "0";
-            _procedureMasterService.CreateProcedure(id);
-            return CreatedAtRoute("GetProcedureById", new { id = id.ProcedureMastersId.ToString() }, id);
+            try
+            {
+                await _procedureMasterService.CreateProcedure(id);
+                return id;
             }
             catch (FormatException e)
             {

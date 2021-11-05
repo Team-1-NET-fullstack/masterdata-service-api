@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System;
 
 namespace MasterData.Service.Api.Entities
 {
@@ -9,19 +10,19 @@ namespace MasterData.Service.Api.Entities
         [BsonId]
         public string Id { get; set; }
         
-        //public string AllergyMastersId { get; set; }
+        
 
         [BsonElement("Description")]
         public string Description { get; set; }
 
-        public string IsFatal { get; set; }
+        public bool IsFatal { get; set; }
 
-        public string CreatedDate { get; set; }
+    //    public string CreatedDate { get; set; }
 
-        public string CreatedBy { get; set; }
+    //    public string CreatedBy { get; set; }
 
-        public string UpdatedBy { get; set; }
+    //    public string UpdatedBy { get; set; }
 
-        public string UpdatedDate { get; set; }
+    //    public string UpdatedDate { get; set; }
     }
 }

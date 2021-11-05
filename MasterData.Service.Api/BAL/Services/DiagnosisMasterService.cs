@@ -27,21 +27,32 @@ namespace MasterData.Service.Api.BAL.Services
             diagnosisMasters = _diagnosisMasters.Find(diagnosis => true).ToList();
             return diagnosisMasters;
         }
+
         public DiagnosisMasters GetDiagnosisById(string id) =>
             _diagnosisMasters.Find<DiagnosisMasters>(diagnosis => diagnosis.Id == id).FirstOrDefault();
-        public DiagnosisMasters GetDiagnosisByDescription(string desc) =>
-            _diagnosisMasters.Find<DiagnosisMasters>(diagnosis => diagnosis.Description.ToLower() == desc.ToLower()).First();
-        public DiagnosisMasters GetDiagnosisByName(string name) =>
-            _diagnosisMasters.Find<DiagnosisMasters>(diagnosis => diagnosis.Name == name).FirstOrDefault();
-        public DiagnosisMasters CreateDiagnosis(DiagnosisMasters id)
+
+        public DiagnosisMasters GetDiagnosisByDescription(string desc)
         {
-            _diagnosisMasters.InsertOne(id);
-            return id;
+            try
+            {
+                return _diagnosisMasters.Find<DiagnosisMasters>(diagnosis => diagnosis.Description.ToLower() == desc.ToLower()).First();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
         
-        public void Update(string id, DiagnosisMasters diagnosisMasters) =>
-            _diagnosisMasters.ReplaceOne(diagnosis => diagnosis.Id == id, diagnosisMasters);
 
+        public async Task<DiagnosisMasters> CreateDiagnosis(DiagnosisMasters id)
+        {
+            //id.Id = null;
+            await _diagnosisMasters.InsertOneAsync(id);
+            return id;
+        }
+
+        public async Task UpdateAsync(string id, DiagnosisMasters diagnosisMasters) =>
+           await _diagnosisMasters.ReplaceOneAsync(diagnosis => diagnosis.Id == id, diagnosisMasters);
 
     }
 

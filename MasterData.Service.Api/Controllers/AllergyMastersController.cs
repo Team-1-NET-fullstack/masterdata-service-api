@@ -21,19 +21,7 @@ namespace MasterData.Service.Api.Controllers
             _allergyMasterService = allergyMasterService;
         }
 
-        [HttpGet("GetAllAllergy")]
-        public ActionResult<List<AllergyMasters>> GetAllAllergy()
-        {
-            try
-            {
-                return _allergyMasterService.GetAllAllergy();
-            }
-            catch (Exception e)
-            {
-                throw new FileNotFoundException("Data not found:" + e.Message);
-
-            }
-        }
+      
         [HttpGet("GetAllergyById")]
         public ActionResult<AllergyMasters> GetAllergybyId(string id)
         {
@@ -91,16 +79,16 @@ namespace MasterData.Service.Api.Controllers
         }
        
         [HttpPut("UpdateAllergy")]
-        public async Task<IActionResult> UpdateAllergy(string id, AllergyMasters allergyMastersIn)
+        public async Task<IActionResult> UpdateAllergy(AllergyMasters allergyMastersIn)
         {
             try
             {
-                var allergy =  _allergyMasterService.GetAllergyById(id);
+                var allergy =  _allergyMasterService.GetAllergyByDescription(allergyMastersIn.Id);
                 if (allergy == null)
                 {
                     return NotFound();
                 }
-                await _allergyMasterService.UpdateAsync(id, allergyMastersIn);
+                await _allergyMasterService.UpdateAsync(allergyMastersIn);
                 return NoContent();
             }
             catch (FormatException e)
