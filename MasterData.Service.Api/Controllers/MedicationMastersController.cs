@@ -19,12 +19,12 @@ namespace MasterData.Service.Api.Controllers
             _medicationMasterService = medicationMasterService;
         }
 
-        [HttpGet("GetAll")]
-        public ActionResult<List<MedicationMasters>> GetAllMedication() =>
-            _medicationMasterService.GetAllMedication();
+        //[HttpGet("GetAll")]
+        //public ActionResult<List<MedicationMasters>> GetAllMedication() =>
+        //    _medicationMasterService.GetAllMedication();
 
 
-        [HttpGet(Name = "GetMedicationById")]
+        [HttpGet("GetMedicationById")]
         public ActionResult<MedicationMasters> GetMedicationbyId(string id)
         {
             var medication = _medicationMasterService.GetMedicationById(id);
@@ -60,7 +60,7 @@ namespace MasterData.Service.Api.Controllers
 
         [HttpPost("CreateNewMedication")]
         public async Task<MedicationMasters> CreateMedication(MedicationMasters id)
-        { 
+        {
             try
             {
                 await _medicationMasterService.CreateMedication(id);
@@ -72,29 +72,14 @@ namespace MasterData.Service.Api.Controllers
             }
         }
 
-        
+
         [HttpPut("UpdateMedication")]
-        public async Task<IActionResult> UpdateMedication(string id, MedicationMasters medicationMastersIn)
+        public async Task<IActionResult> UpdateDiagnosis([FromBody] MedicationMasters medicationMastersIn)
         {
-            try
-            {
-                var medication = _medicationMasterService.GetMedicationById(id);
-
-                if (medication == null)
-                {
-                    return NotFound();
-                }
-
-                await _medicationMasterService.UpdateAsync(id, medicationMastersIn);
-                return NoContent();
-            }
-            catch (FormatException e)
-            {
-                throw new FormatException("Data not inserted:" + e.Message);
-}
+            return Ok(await _medicationMasterService.UpdateAsync(medicationMastersIn));
         }
-          
-            
+
+
 
     }
 }

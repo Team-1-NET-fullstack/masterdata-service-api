@@ -50,11 +50,14 @@ namespace MasterData.Service.Api.BAL.Services
             await _diagnosisMasters.InsertOneAsync(id);
             return id;
         }
-
-        public async Task UpdateAsync(string id, DiagnosisMasters diagnosisMasters) =>
-           await _diagnosisMasters.ReplaceOneAsync(diagnosis => diagnosis.Id == id, diagnosisMasters);
-
+        public async Task<bool> UpdateAsync(DiagnosisMasters diagnosisMasters)
+        {
+            var updateResult = await _diagnosisMasters.ReplaceOneAsync(filter: g => g.Id == diagnosisMasters.Id, replacement: diagnosisMasters);
+            return updateResult.IsAcknowledged
+                                && updateResult.ModifiedCount > 0;
+        }
     }
-
 }
+
+
 

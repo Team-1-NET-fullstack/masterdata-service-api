@@ -46,13 +46,15 @@ namespace MasterData.Service.Api.BAL.Services
             await _allergyMasters.InsertOneAsync(id);
             return id;
         }
-
-        public async Task UpdateAsync(AllergyMasters allergyMastersIn) =>
-           await _allergyMasters.ReplaceOneAsync(allergy => allergy.Id == allergyMastersIn.Id, allergyMastersIn);
-        
+    public async Task<bool> UpdateAsync(AllergyMasters allergyMastersIn)
+    {
+        var updateResult = await _allergyMasters.ReplaceOneAsync(filter: g => g.Id == allergyMastersIn.Id, replacement: allergyMastersIn);
+        return updateResult.IsAcknowledged
+                            && updateResult.ModifiedCount > 0;
         }
-
     }
+
+}
 
 
 
