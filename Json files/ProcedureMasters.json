@@ -1,0 +1,61 @@
+[
+{
+"Name":"blood analysis",
+"Description":"blood analysis",
+"IsDeprecated":true
+},
+{
+
+"Name":"gastric fluid analysis",
+"Description":"gastric fluid analysis",
+"IsDeprecated":true
+},
+{
+
+"Name":"liver function test",
+"Description":"liver function test",
+"IsDeprecated":true
+},
+{
+
+"Name":"malabsorption test",
+"Description":"malabsorption test",
+"IsDeprecated":false
+},
+{
+
+"Name":"thyroid function test",
+"Description":"thyroid function test",
+"IsDeprecated":false
+},
+{
+
+"Name":"ultrasound",
+"Description":"ultrasound",
+"IsDeprecated":true
+},
+{
+
+"Name":"tomography",
+"Description":"tomography",
+"IsDeprecated":false
+},
+{
+
+"Name":"autopsy",
+"Description":"autopsy",
+"IsDeprecated":true
+},
+{
+
+"Name":"endoscopy",
+"Description":"endoscopy",
+"IsDeprecated":true
+},
+{
+
+"Name":"phenolsulfonphthalein test",
+"Description":"phenolsulfonphthalein test",
+"IsDeprecated":false
+}
+]

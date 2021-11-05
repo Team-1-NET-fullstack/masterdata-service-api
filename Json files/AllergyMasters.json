@@ -1,0 +1,51 @@
+[
+{
+
+"Description":"Pet",
+"IsFatal":false
+}
+,{
+"Description":"Mold",
+"IsFatal":true
+},
+{
+
+"Description":"Insect",
+"IsFatal":true
+},
+{
+
+"Description":"Drug",
+"IsFatal":true
+},
+{
+
+"Description":"Food",
+"IsFatal":true
+},
+{
+
+"Description":"Pollen",
+"IsFatal":true
+},
+{
+
+"Description":"Latex",
+"IsFatal":false
+},
+{
+
+"Description":"Peanut",
+"IsFatal":false
+},
+  {
+
+    "Description": "Milk",
+    "IsFatal": false
+  },
+{
+
+"Description":"Dust",
+"IsFatal":false
+}
+]

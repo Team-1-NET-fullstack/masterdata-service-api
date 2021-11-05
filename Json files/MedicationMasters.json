@@ -1,0 +1,64 @@
+[
+{
+"Name":"Annovera",
+"Description":"Annovera",
+"Dosage":"3 times a day",
+"IsDeprecated":true
+},
+{
+"Name":"Apixaban",
+"Description":"Apixaban",
+"Dosage":"2 times a day",
+"IsDeprecated":false
+},
+{
+"Name":"Apokyn",
+"Description":"Apokyn",
+"Dosage":"once a day",
+"IsDeprecated":true
+},
+{
+"Name":"Aricept",
+"Description":"Aricept",
+"Dosage":"twice a day",
+"IsDeprecated":false
+},
+{
+
+"Name":"Aristada",
+"Description":"Aristada",
+"Dosage":"thrice a day",
+"IsDeprecated":true
+},
+{
+"Name":"Afinitor",
+"Description":"Afinitor",
+"Dosage":"twice a day",
+"IsDeprecated":false
+},
+{
+
+"Name":"Azithromycin",
+"Description":"Azithromycin",
+"Dosage":"twice a day",
+"IsDeprecated":true
+},
+{
+"Name":"Amlodipine",
+"Description":"Amlodipine",
+"Dosage":"twice a day",
+"IsDeprecated":false
+},
+{
+"Name":"Azathioprine",
+"Description":"Azathioprine",
+"Dosage":"twice a day",
+"IsDeprecated":true
+},
+{
+"Name":"Aleve",
+"Description":"Aleve",
+"Dosage":"twice a day",
+"IsDeprecated":false
+}
+]

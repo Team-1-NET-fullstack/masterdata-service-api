@@ -1,0 +1,50 @@
+[
+{
+"Name":"Headache, Migraine",
+"Description":"Headache, Migraine"
+}
+,
+{
+"Name":"Hypertension",
+"Description":"Hypertension"
+},
+{
+"Name":"Speech Defects",
+"Description":"Speech Defects"
+
+}
+,
+{
+"Name":"Hearing Loss",
+"Description":"Hearing Loss"
+},{
+"Name":"Down Syndrome",
+"Description":"Down Syndrome"
+}
+,
+{
+
+"Name":"Visual Impairment",
+"Description":"Visual Impairment"
+},{
+
+"Name":"Anxiety Disorder",
+"Description":"Anxiety Disorder"
+}
+,
+{
+
+"Name":"Constipation",
+"Description":"Constipation"
+},{
+
+"Name":"Autism Spectrum Disorder",
+"Description":"Autism Spectrum Disorder"
+}
+,
+{
+
+"Name":"Intellectual Disability",
+"Description":"Intellectual Disability"
+}
+]
