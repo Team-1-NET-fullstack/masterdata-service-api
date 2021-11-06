@@ -36,7 +36,11 @@ namespace MasterData.Service.Api.BAL.Services
             await _procedureMasters.InsertOneAsync(id);
             return id;
         }
-        public void UpdateProcedure(string id, ProcedureMasters procedureMasters) =>
-            _procedureMasters.ReplaceOne(procedure => procedure.Id == id, procedureMasters);
+        public async Task<bool> UpdateAsync(ProcedureMasters procedureMasters)
+        {
+            var updateResult = await _procedureMasters.ReplaceOneAsync(filter: g => g.Id == procedureMasters.Id, replacement: procedureMasters);
+            return updateResult.IsAcknowledged
+                                && updateResult.ModifiedCount > 0;
+        }
     }
 }

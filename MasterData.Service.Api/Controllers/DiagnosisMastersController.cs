@@ -33,14 +33,14 @@ namespace MasterData.Service.Api.Controllers
                 }
 
                 return diagnosis;
-            
+
             }
             catch (Exception e)
             {
                 throw new KeyNotFoundException("Data not found:" + e.Message);
 
-    }
-}
+            }
+        }
 
         [HttpGet("GetDiagnosisByDescription")]
         public ActionResult<DiagnosisMasters> GetDescriptionDiagnosis(string desc)
@@ -80,21 +80,9 @@ namespace MasterData.Service.Api.Controllers
 
 
         [HttpPut("UpdateDiagnosis")]
-        public async Task<IActionResult> UpdateDiagnosis(string id, DiagnosisMasters diagnosisMastersIn)
+        public async Task<IActionResult> UpdateDiagnosis([FromBody] DiagnosisMasters diagnosisMastersIn)
         {
-            try {
-                var diagnosis = _diagnosisMasterService.GetDiagnosisById(id);
-                if (diagnosis == null)
-                {
-                    return NotFound();
-                }
-                await _diagnosisMasterService.UpdateAsync(id, diagnosisMastersIn);
-                return NoContent();
-            }
-            catch (FormatException e)
-            {
-                throw new FormatException("Data not inserted:" + e.Message);
-            }
+            return Ok(await _diagnosisMasterService.UpdateAsync(diagnosisMastersIn));
         }
 
 

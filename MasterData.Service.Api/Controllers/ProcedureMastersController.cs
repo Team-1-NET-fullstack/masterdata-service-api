@@ -20,20 +20,20 @@ namespace MasterData.Service.Api.Controllers
             _procedureMasterService = procedureMasterService;
         }
 
-        [HttpGet("GetAll")]
-        public ActionResult<List<ProcedureMasters>> GetAllProcedure()
-        {
-            try
-            {
-                return _procedureMasterService.GetAllProcedure();
+        //[HttpGet("GetAll")]
+        //public ActionResult<List<ProcedureMasters>> GetAllProcedure()
+        //{
+        //    try
+        //    {
+        //        return _procedureMasterService.GetAllProcedure();
 
-            }
-            catch (Exception e)
-            {
-                throw new FileNotFoundException("Data not found:" + e.Message);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        throw new FileNotFoundException("Data not found:" + e.Message);
 
-            }
-        }
+        //    }
+        //}
 
 [HttpGet("GetProcedureById")]
         public ActionResult<ProcedureMasters> GetProcedurebyId(string id)
@@ -91,25 +91,9 @@ namespace MasterData.Service.Api.Controllers
             }
         }
         [HttpPut("UpdateProcedure")]
-        public IActionResult UpdateProcedure(string id, ProcedureMasters procedureMastersIn)
+        public async Task<IActionResult> UpdateDiagnosis([FromBody] ProcedureMasters procedureMastersIn)
         {
-            try
-            {
-                var procedure = _procedureMasterService.GetProcedureById(id);
-
-                if (procedure == null)
-                {
-                    return NotFound();
-                }
-
-                _procedureMasterService.UpdateProcedure(id, procedureMastersIn);
-
-                return NoContent();
-            }
-            catch (FormatException e)
-            {
-                throw new FormatException("Data not inserted:" + e.Message);
-            }
+            return Ok(await _procedureMasterService.UpdateAsync(procedureMastersIn));
         }
 
     }

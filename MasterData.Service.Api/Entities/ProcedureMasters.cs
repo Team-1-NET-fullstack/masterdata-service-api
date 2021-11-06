@@ -14,7 +14,7 @@ namespace MasterData.Service.Api.Entities
         [BsonElement("Name")]
         public string Name { get; set; }
 
-        public string IsDeprecated { get; set; }
+        public bool IsDeprecated { get; set; }
         [BsonElement("Description")]
         public string Description { get; set; }
 

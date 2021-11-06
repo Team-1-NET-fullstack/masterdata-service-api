@@ -79,25 +79,12 @@ namespace MasterData.Service.Api.Controllers
         }
        
         [HttpPut("UpdateAllergy")]
-        public async Task<IActionResult> UpdateAllergy(AllergyMasters allergyMastersIn)
-        {
-            try
-            {
-                var allergy =  _allergyMasterService.GetAllergyByDescription(allergyMastersIn.Id);
-                if (allergy == null)
-                {
-                    return NotFound();
-                }
-                await _allergyMasterService.UpdateAsync(allergyMastersIn);
-                return NoContent();
-            }
-            catch (FormatException e)
-            {
-               throw new FormatException("Data not inserted:" + e.Message);
-            }
 
+        public async Task<IActionResult> UpdateAllergy([FromBody] AllergyMasters allergyMastersIn)
+        {
+            return Ok(await _allergyMasterService.UpdateAsync(allergyMastersIn));
         }
-        
+
 
 
     }

@@ -35,8 +35,11 @@ namespace MasterData.Service.Api.BAL.Services
             await _medicationMasters.InsertOneAsync(id);
             return id;
         }
-        
-        public async Task UpdateAsync(string id, MedicationMasters medicationMasters) =>
-           await _medicationMasters.ReplaceOneAsync(medication => medication.Id == id, medicationMasters);
+        public async Task<bool> UpdateAsync(MedicationMasters medicationMasters)
+        {
+            var updateResult = await _medicationMasters.ReplaceOneAsync(filter: g => g.Id == medicationMasters.Id, replacement: medicationMasters);
+            return updateResult.IsAcknowledged
+                                && updateResult.ModifiedCount > 0;
+        }
     }
 }
