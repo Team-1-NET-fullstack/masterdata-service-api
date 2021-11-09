@@ -26,3 +26,9 @@ C:\Users\yogis\OneDrive\Desktop\Ocelot\masterdata-service-api\APIGateway\obj\Deb
 C:\Users\yogis\OneDrive\Desktop\Ocelot\masterdata-service-api\APIGateway\obj\Debug\net5.0\ref\APIGateway.dll
 C:\Users\yogis\OneDrive\Desktop\Ocelot\masterdata-service-api\APIGateway\obj\Debug\net5.0\APIGateway.pdb
 C:\Users\yogis\OneDrive\Desktop\Ocelot\masterdata-service-api\APIGateway\obj\Debug\net5.0\APIGateway.csproj.AssemblyReference.cache
+C:\Users\yogis\OneDrive\Desktop\Ocelot\masterdata-service-api\APIGateway\bin\Debug\net5.0\APIGateway.deps.json
+C:\Users\yogis\OneDrive\Desktop\Ocelot\masterdata-service-api\APIGateway\bin\Debug\net5.0\APIGateway.runtimeconfig.json
+C:\Users\yogis\OneDrive\Desktop\Ocelot\masterdata-service-api\APIGateway\bin\Debug\net5.0\APIGateway.runtimeconfig.dev.json
+C:\Users\yogis\OneDrive\Desktop\Ocelot\masterdata-service-api\APIGateway\bin\Debug\net5.0\ref\APIGateway.dll
+C:\Users\yogis\OneDrive\Desktop\Ocelot\masterdata-service-api\APIGateway\bin\Debug\net5.0\APIGateway.pdb
+C:\Users\yogis\OneDrive\Desktop\Ocelot\masterdata-service-api\APIGateway\obj\Debug\net5.0\APIGateway.genruntimeconfig.cache
