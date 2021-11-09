@@ -20,9 +20,12 @@ namespace MasterData.Service.Api.Controllers
         {
             _allergyMasterService = allergyMasterService;
         }
+        [HttpGet]
+        public ActionResult<List<AllergyMasters>> Get() =>
+          _allergyMasterService.GetAllAllergy();
 
-      
-        [HttpGet("GetAllergyById")]
+
+        [HttpGet("{id}")]
         public ActionResult<AllergyMasters> GetAllergybyId(string id)
         {
             try

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fthMtUPkgYoJhpFlPjPOghaX0dBbdyCaxYR0g+7PWzKBZ7Q8D4ahQ5acJswLmDONODDwYkjJMoakc/LM+CxFAA==",
+  "dgSpecHash": "Q8ImIKt3Cot9XDem+VoZeu78jnDW5AmHi3EZQHMFbTbPlH3daDaqa9h934cs0EGL0geFvUphHdRIpckAUjfRNA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yogis\\OneDrive\\Desktop\\Services\\Master Data Mongo\\masterdata-service-api\\MasterData.Service.Api\\MasterData.Service.Api.csproj",
+  "projectFilePath": "C:\\Users\\yogis\\OneDrive\\Desktop\\Ocelot\\masterdata-service-api\\MasterData.Service.Api\\MasterData.Service.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yogis\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
     "C:\\Users\\yogis\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",

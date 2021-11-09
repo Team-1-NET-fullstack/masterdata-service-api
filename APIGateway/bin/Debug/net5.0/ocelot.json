@@ -1,0 +1,35 @@
+{
+  "ReRoutes": [
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/AllergyMasters",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/api/AllergyMasters",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/AllergyMasters/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/AllergyMasters/{id}",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:9003"
+  }
+}
