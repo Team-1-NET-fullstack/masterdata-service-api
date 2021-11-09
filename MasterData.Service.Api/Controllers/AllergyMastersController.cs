@@ -71,6 +71,8 @@ namespace MasterData.Service.Api.Controllers
             {
                await _allergyMasterService.CreateAllergy(id);
                 return id;
+
+
             }
             catch(FormatException e)
             {

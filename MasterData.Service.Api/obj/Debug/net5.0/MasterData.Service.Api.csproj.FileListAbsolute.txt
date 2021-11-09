@@ -84,3 +84,13 @@ C:\Users\yogis\OneDrive\Desktop\Services\Master Data Mongo\masterdata-service-ap
 C:\Users\yogis\OneDrive\Desktop\Services\Master Data Mongo\masterdata-service-api\MasterData.Service.Api\obj\Debug\net5.0\ref\MasterData.Service.Api.dll
 C:\Users\yogis\OneDrive\Desktop\Services\Master Data Mongo\masterdata-service-api\MasterData.Service.Api\obj\Debug\net5.0\MasterData.Service.Api.pdb
 C:\Users\yogis\OneDrive\Desktop\Services\Master Data Mongo\masterdata-service-api\MasterData.Service.Api\obj\Debug\net5.0\MasterData.Service.Api.genruntimeconfig.cache
+C:\Users\yogis\OneDrive\Desktop\Services\Master Data Mongo\masterdata-service-api\MasterData.Service.Api\bin\Debug\net5.0\Automatonymous.dll
+C:\Users\yogis\OneDrive\Desktop\Services\Master Data Mongo\masterdata-service-api\MasterData.Service.Api\bin\Debug\net5.0\GreenPipes.dll
+C:\Users\yogis\OneDrive\Desktop\Services\Master Data Mongo\masterdata-service-api\MasterData.Service.Api\bin\Debug\net5.0\MassTransit.dll
+C:\Users\yogis\OneDrive\Desktop\Services\Master Data Mongo\masterdata-service-api\MasterData.Service.Api\bin\Debug\net5.0\MassTransit.AspNetCoreIntegration.dll
+C:\Users\yogis\OneDrive\Desktop\Services\Master Data Mongo\masterdata-service-api\MasterData.Service.Api\bin\Debug\net5.0\MassTransit.ExtensionsDependencyInjectionIntegration.dll
+C:\Users\yogis\OneDrive\Desktop\Services\Master Data Mongo\masterdata-service-api\MasterData.Service.Api\bin\Debug\net5.0\MassTransit.RabbitMqTransport.dll
+C:\Users\yogis\OneDrive\Desktop\Services\Master Data Mongo\masterdata-service-api\MasterData.Service.Api\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\yogis\OneDrive\Desktop\Services\Master Data Mongo\masterdata-service-api\MasterData.Service.Api\bin\Debug\net5.0\NewId.dll
+C:\Users\yogis\OneDrive\Desktop\Services\Master Data Mongo\masterdata-service-api\MasterData.Service.Api\bin\Debug\net5.0\RabbitMQ.Client.dll
+C:\Users\yogis\OneDrive\Desktop\Services\Master Data Mongo\masterdata-service-api\MasterData.Service.Api\bin\Debug\net5.0\System.Text.Json.dll

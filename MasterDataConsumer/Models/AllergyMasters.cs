@@ -1,15 +1,16 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace MasterData.Service.Api.Entities
+namespace MasterDataConsumer.Models
 {
     public class AllergyMasters
     {
-        [BsonRepresentation(BsonType.ObjectId)]
-        [BsonId]
+
         public string Id { get; set; }
-        [BsonElement("Description")]
+
         public string Description { get; set; }
 
         public bool IsFatal { get; set; }
@@ -20,3 +21,4 @@ namespace MasterData.Service.Api.Entities
         public string Command { get; set; }
     }
 }
+

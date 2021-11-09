@@ -1,6 +1,6 @@
 using MasterData.Service.Api.BAL.Services;
 using MasterData.Service.Api.DAL;
-
+using MasterData.Service.Api.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -39,11 +39,19 @@ namespace MasterData.Service.Api
     .AllowAnyMethod();
                 });
             });
+            services.AddDbContext<CTGeneralHospitalContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:dbConn"]));
+
             services.Configure<CTGeneralHospitalDatabaseSettings>(
                 Configuration.GetSection(nameof(CTGeneralHospitalDatabaseSettings)));
 
             services.AddSingleton<ICTGeneralHospitalDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<CTGeneralHospitalDatabaseSettings>>().Value);
+
+            var configuration = new ConfigurationBuilder()
+                                .SetBasePath(Directory.GetCurrentDirectory())
+                                .AddJsonFile("appsettings.json", false)
+                                .Build();
+            services.Configure<AppSettings>(configuration.GetSection("AppSettings"));
 
             services.AddSingleton<AllergyMasterService>();
             services.AddSingleton<DiagnosisMasterService>();
