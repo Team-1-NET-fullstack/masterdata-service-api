@@ -7496,19 +7496,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AparnaT\\.nuget\\packages\\": {}
+    "C:\\Users\\yogis\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\IMPACT2\\patient-service-api\\PatientModule.API\\PatientModule.API.csproj",
+      "projectUniqueName": "C:\\Users\\yogis\\OneDrive\\Desktop\\Ocelot\\masterdata-service-api\\PatientModule.API\\PatientModule.API.csproj",
       "projectName": "PatientModule.API",
-      "projectPath": "C:\\IMPACT2\\patient-service-api\\PatientModule.API\\PatientModule.API.csproj",
-      "packagesPath": "C:\\Users\\AparnaT\\.nuget\\packages\\",
-      "outputPath": "C:\\IMPACT2\\patient-service-api\\PatientModule.API\\obj\\",
+      "projectPath": "C:\\Users\\yogis\\OneDrive\\Desktop\\Ocelot\\masterdata-service-api\\PatientModule.API\\PatientModule.API.csproj",
+      "packagesPath": "C:\\Users\\yogis\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\yogis\\OneDrive\\Desktop\\Ocelot\\masterdata-service-api\\PatientModule.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\AparnaT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\yogis\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

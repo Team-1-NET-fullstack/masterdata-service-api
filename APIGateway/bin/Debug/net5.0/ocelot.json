@@ -419,7 +419,41 @@
       // Upstream : source of call
       "UpstreamPathTemplate": "/GetAllOfTheAppointmentByAppointmentId/{appointmentId}",
       "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+
+
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/Appointments/getAllAvailablePhysician",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9032
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/getAllTheAvailablePhysician",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/Appointments/UpdateAppointmentStatus",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9032
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/UpdateTheAppointmentStatus",
+      "UpstreamHttpMethod": [ "PUT" ] // We can include post,put, delete seperated by comma
     }
+
+    //****************************************************************************Allergies*********************************************************************************
+
   ],
   "GlobalConfiguration": {
     "BaseUrl": "http://localhost:9003"
