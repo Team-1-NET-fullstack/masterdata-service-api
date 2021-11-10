@@ -451,6 +451,9 @@
       "UpstreamPathTemplate": "/UpdateTheAppointmentStatus",
       "UpstreamHttpMethod": [ "PUT" ] // We can include post,put, delete seperated by comma
     }
+
+    //****************************************************************************Allergies*********************************************************************************
+
   ],
   "GlobalConfiguration": {
     "BaseUrl": "http://localhost:9003"
