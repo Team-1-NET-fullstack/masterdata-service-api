@@ -449,7 +449,7 @@
       ],
       // Upstream : source of call
       "UpstreamPathTemplate": "/UpdateTheAppointmentStatus",
-      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+      "UpstreamHttpMethod": [ "PUT" ] // We can include post,put, delete seperated by comma
     }
   ],
   "GlobalConfiguration": {
