@@ -25,6 +25,17 @@ namespace APIGateway
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                builder =>
+                {
+                    builder.AllowAnyOrigin()
+                    //WithOrigins("http://localhost:4200,http://localhost:9003")
+    .AllowAnyHeader()
+    .AllowAnyMethod();
+                });
+            });
             services.AddOcelot(configuration);
         }
 
@@ -35,7 +46,11 @@ namespace APIGateway
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(x => x
+.AllowAnyOrigin()
+.AllowAnyMethod()
+.AllowAnyHeader());
+            app.UseCors("AllowAll");
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

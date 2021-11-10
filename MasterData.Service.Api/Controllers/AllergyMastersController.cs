@@ -25,7 +25,7 @@ namespace MasterData.Service.Api.Controllers
           _allergyMasterService.GetAllAllergy();
 
 
-        [HttpGet("{id}")]
+        [HttpGet("GetAllergybyId")]
         public ActionResult<AllergyMasters> GetAllergybyId(string id)
         {
             try
