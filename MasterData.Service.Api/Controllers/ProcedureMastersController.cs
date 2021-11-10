@@ -20,22 +20,22 @@ namespace MasterData.Service.Api.Controllers
             _procedureMasterService = procedureMasterService;
         }
 
-        //[HttpGet("GetAll")]
-        //public ActionResult<List<ProcedureMasters>> GetAllProcedure()
-        //{
-        //    try
-        //    {
-        //        return _procedureMasterService.GetAllProcedure();
+        [HttpGet("GetAll")]
+        public ActionResult<List<ProcedureMasters>> GetAllProcedure()
+        {
+            try
+            {
+                return _procedureMasterService.GetAllProcedure();
 
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        throw new FileNotFoundException("Data not found:" + e.Message);
+            }
+            catch (Exception e)
+            {
+                throw new FileNotFoundException("Data not found:" + e.Message);
 
-        //    }
-        //}
+            }
+        }
 
-[HttpGet("GetProcedureById")]
+        [HttpGet("GetProcedureById")]
         public ActionResult<ProcedureMasters> GetProcedurebyId(string id)
         {
             try { 

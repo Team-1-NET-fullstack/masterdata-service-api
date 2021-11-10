@@ -74,6 +74,240 @@
       // Upstream : source of call
       "UpstreamPathTemplate": "/UpdateAllergyMasterData",
       "UpstreamHttpMethod": [ "PUT" ] // We can include post,put, delete seperated by comma
+    },
+
+    //****************************************************************************DiagnosisMasters*********************************************************************************
+
+    {
+      "DownstreamPathTemplate": "/api/DiagnosisMasters",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/GetDiagnosisMasters",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/DiagnosisMasters/GetDiagnosisById",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/GetDiagnosisMastersbyId",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/DiagnosisMasters/GetDiagnosisByDescription",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/GetDiagnosisMastersByDescription",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+
+
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/DiagnosisMasters/CreateNewDiagnosis",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/CreateNewDiagnosisMastersData",
+      "UpstreamHttpMethod": [ "POST" ] // We can include post,put, delete seperated by comma
+    },
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/DiagnosisMasters/UpdateDiagnosis",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/UpdateDiagnosisMastersData",
+      "UpstreamHttpMethod": [ "PUT" ] // We can include post,put, delete seperated by comma
+    },
+
+    //****************************************************************************MedicationMasters*********************************************************************************
+
+    {
+      "DownstreamPathTemplate": "/api/MedicationMasters",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/GetMedicationMasters",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/MedicationMasters/GetMedicationById",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/GetMedicationMastersbyId",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/MedicationMasters/GetMedicationByDescription",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/GetMedicationMastersByDescription",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+
+
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/MedicationMasters/CreateNewMedication",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/CreateNewMedicationMastersData",
+      "UpstreamHttpMethod": [ "POST" ] // We can include post,put, delete seperated by comma
+    },
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/MedicationMasters/UpdateMedication",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/UpdateMedicationMastersData",
+      "UpstreamHttpMethod": [ "PUT" ] // We can include post,put, delete seperated by comma
+    },
+
+    //****************************************************************************ProcedureMasters*********************************************************************************
+
+    {
+      "DownstreamPathTemplate": "/api/ProcedureMasters",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/GetProcedureMasters",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/ProcedureMasters/GetProcedureById",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/GetProcedureMastersbyId",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/ProcedureMasters/GetProcedureByDescription",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/GetProcedureMastersByDescription",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+
+
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/ProcedureMasters/CreateNewProcedure",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/CreateNewProcedureMastersData",
+      "UpstreamHttpMethod": [ "POST" ] // We can include post,put, delete seperated by comma
+    },
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/ProcedureMasters/UpdateProcedure",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/UpdateProcedureMastersData",
+      "UpstreamHttpMethod": [ "PUT" ] // We can include post,put, delete seperated by comma
     }
   ],
   "GlobalConfiguration": {
