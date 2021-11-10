@@ -34,7 +34,8 @@ namespace MasterData.Service.Api
                 options.AddDefaultPolicy(
                 builder =>
                 {
-                    builder.WithOrigins("http://localhost:59523", "http://localhost:4200")
+                    builder.AllowAnyOrigin()
+                    //WithOrigins("http://localhost:4200,http://localhost:9003")
     .AllowAnyHeader()
     .AllowAnyMethod();
                 });

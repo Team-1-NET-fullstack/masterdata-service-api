@@ -1,0 +1,82 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/AllergyMasters",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/GetAllergyMasters",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/AllergyMasters/GetAllergybyId",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/GetAllergyMastersbyId",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/AllergyMasters/GetAllergyByDescription",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/GetAllergyMastersByDescription",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+
+
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/AllergyMasters/CreateNewAllergy",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/CreateNewAllergyMasterData",
+      "UpstreamHttpMethod": [ "POST" ] // We can include post,put, delete seperated by comma
+    },
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/AllergyMasters/UpdateAllergy",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/UpdateAllergyMasterData",
+      "UpstreamHttpMethod": [ "PUT" ] // We can include post,put, delete seperated by comma
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:9003"
+  }
+}

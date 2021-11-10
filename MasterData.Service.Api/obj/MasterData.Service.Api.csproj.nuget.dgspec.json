@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yogis\\OneDrive\\Desktop\\Services\\Master Data Mongo\\masterdata-service-api\\MasterData.Service.Api\\MasterData.Service.Api.csproj": {}
+    "C:\\Users\\yogis\\OneDrive\\Desktop\\Ocelot\\masterdata-service-api\\MasterData.Service.Api\\MasterData.Service.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yogis\\OneDrive\\Desktop\\Services\\Master Data Mongo\\masterdata-service-api\\MasterData.Service.Api\\MasterData.Service.Api.csproj": {
+    "C:\\Users\\yogis\\OneDrive\\Desktop\\Ocelot\\masterdata-service-api\\MasterData.Service.Api\\MasterData.Service.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yogis\\OneDrive\\Desktop\\Services\\Master Data Mongo\\masterdata-service-api\\MasterData.Service.Api\\MasterData.Service.Api.csproj",
+        "projectUniqueName": "C:\\Users\\yogis\\OneDrive\\Desktop\\Ocelot\\masterdata-service-api\\MasterData.Service.Api\\MasterData.Service.Api.csproj",
         "projectName": "MasterData.Service.Api",
-        "projectPath": "C:\\Users\\yogis\\OneDrive\\Desktop\\Services\\Master Data Mongo\\masterdata-service-api\\MasterData.Service.Api\\MasterData.Service.Api.csproj",
+        "projectPath": "C:\\Users\\yogis\\OneDrive\\Desktop\\Ocelot\\masterdata-service-api\\MasterData.Service.Api\\MasterData.Service.Api.csproj",
         "packagesPath": "C:\\Users\\yogis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yogis\\OneDrive\\Desktop\\Services\\Master Data Mongo\\masterdata-service-api\\MasterData.Service.Api\\obj\\",
+        "outputPath": "C:\\Users\\yogis\\OneDrive\\Desktop\\Ocelot\\masterdata-service-api\\MasterData.Service.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yogis\\AppData\\Roaming\\NuGet\\NuGet.Config",
