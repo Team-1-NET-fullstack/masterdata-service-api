@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterData.Service.Api", "MasterData.Service.Api.csproj", "{76170147-DA93-4BEA-8F03-4DB4F05AEF18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIGateway", "..\APIGateway\APIGateway.csproj", "{22629FAB-D4C7-4311-BB09-84BBE4ABC8FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGateway", "..\APIGateway\APIGateway.csproj", "{22629FAB-D4C7-4311-BB09-84BBE4ABC8FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentScheduler.Service.API", "..\AppointmentScheduler.Service.API\AppointmentScheduler.Service.API\AppointmentScheduler.Service.API.csproj", "{43903C11-D702-4803-BC56-F411755FCEF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{22629FAB-D4C7-4311-BB09-84BBE4ABC8FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22629FAB-D4C7-4311-BB09-84BBE4ABC8FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22629FAB-D4C7-4311-BB09-84BBE4ABC8FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43903C11-D702-4803-BC56-F411755FCEF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43903C11-D702-4803-BC56-F411755FCEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43903C11-D702-4803-BC56-F411755FCEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43903C11-D702-4803-BC56-F411755FCEF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

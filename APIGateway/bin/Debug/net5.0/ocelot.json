@@ -308,6 +308,117 @@
       // Upstream : source of call
       "UpstreamPathTemplate": "/UpdateProcedureMastersData",
       "UpstreamHttpMethod": [ "PUT" ] // We can include post,put, delete seperated by comma
+    },
+
+    //****************************************************************************Appointment*********************************************************************************
+
+    {
+      "DownstreamPathTemplate": "/api/Appointments/GetAllAppointments",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9032
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/GetAllTheAppointments",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/Appointments/GetAllUsersForLogin",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9032
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/GetAllTheUsersForLogin",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/Appointments/GetAllUsers",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9032
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/GetAllOfTheUsers",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
+    },
+
+
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/Appointments/CreateAppointment",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9032
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/CreateNewAppointments",
+      "UpstreamHttpMethod": [ "POST" ] // We can include post,put, delete seperated by comma
+    },
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/Appointments/UpdateAppointment",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9032
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/UpdateExistingAppointment",
+      "UpstreamHttpMethod": [ "PUT" ] // We can include post,put, delete seperated by comma
+    },
+
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/Appointments/DeleteApointment/{appointmentId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9032
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/DeleteAllApointment/{appointmentId}",
+      "UpstreamHttpMethod": [ "DELETE" ] // We can include post,put, delete seperated by comma
+    },
+
+
+
+    {
+      // Downstream: what we are willing to call
+      "DownstreamPathTemplate": "/api/Appointments/GetAppointmentByAppointmentId/{appointmentId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9032
+        }
+      ],
+      // Upstream : source of call
+      "UpstreamPathTemplate": "/GetAllOfTheAppointmentByAppointmentId/{appointmentId}",
+      "UpstreamHttpMethod": [ "GET" ] // We can include post,put, delete seperated by comma
     }
   ],
   "GlobalConfiguration": {
