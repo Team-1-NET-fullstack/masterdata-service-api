@@ -19,9 +19,9 @@ namespace MasterData.Service.Api.Controllers
             _medicationMasterService = medicationMasterService;
         }
 
-        //[HttpGet("GetAll")]
-        //public ActionResult<List<MedicationMasters>> GetAllMedication() =>
-        //    _medicationMasterService.GetAllMedication();
+        [HttpGet("GetAll")]
+        public ActionResult<List<MedicationMasters>> GetAllMedication() =>
+            _medicationMasterService.GetAllMedication();
 
 
         [HttpGet("GetMedicationById")]
